@@ -1,0 +1,603 @@
+1) Length of a given String
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+	    String s1="abcd";
+		
+	    for(int i=0; i<s1.length(); i++)
+		   {
+		      System.out.println(s1.charAt(i)+" ");
+		   }
+		   System.out.println();
+		   System.out.println(s1.length());
+		}
+}
+
+Output-
+a b c d
+4
+
+************************************************************************************************************
+
+2)Creating a character Array containing of a String
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+	       String s1="aabbccdd";
+		
+		   for(int i=0; i<s1.length(); i++)
+		      {
+		         System.out.print(s1.charAt(i)+" ");
+		       }
+        }
+}
+
+Output-
+a a b b c c d d
+
+****************************************************************************************************************
+
+3)repeat Each of the Character Twice		
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+	    String s1="welcome";
+		String s2="";
+        for(int i=0; i<s1.length(); i++)
+		    {
+			  s2=s2+s1.charAt(i)+s1.charAt(i);
+		    }
+			System.out.println(s2);
+			
+
+Output-
+wweellccoommee
+
+***********************************************************************************************************
+
+4)string contain only digit
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+	    String s1="1f23";
+		int cnt=0;
+		for(int i=0; i<s1.length(); i++)
+	    	{
+		      if(s1.charAt(i)<'0' || s1.charAt(i)>'9')
+			    {
+                     cnt++;				  
+			    }
+		    }
+			if(cnt==0)
+			   {
+				System.out.println("contain only digit");
+			   }
+			else
+			  {
+				System.out.println("not contain only digit");
+			  }				
+	  }
+}	  
+
+Output-
+   not contain only digit
+
+**************************************************************************************************************
+
+5) sum of digit present in the given String
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+         String s1="ab1d23a";
+        
+        int sum=0;
+        for(int i=0; i<s1.length(); i++)
+        {
+        	if(s1.charAt(i)>='0' && s1.charAt(i)<='9')
+        	{
+        		int num=s1.charAt(i)-48;
+        		sum=sum+num;
+        		
+        	}
+        }
+        	System.out.println(sum);
+     }
+}
+
+Output-
+  6 
+  
+ *****************************************************************************************************
+
+6)Find frequency of each character
+
+public class myclass
+{
+      public static void main(String[] args)
+         String s1="abcdabcaba";	
+		for(int i=0; i<s1.length(); i++)
+		{
+             int count=0;		
+			for(int j=0; j<i; j++)
+			{
+				if(s1.charAt(i)==s1.charAt(j))
+				{
+					count++;
+				}			
+			}
+			if(count==0)
+			{
+				int cnt1=0;
+				for(int k=0; k<s1.length(); k++)
+				    {
+					   if(s1.charAt(k)==s1.charAt(i))
+					    {
+					       cnt1++;
+					     }
+				}
+				System.out.println(s1.charAt(i)+" "+cnt1);
+				
+			}
+			
+		}
+	}	
+}	
+
+Output-
+a 4
+b 3
+c 2
+d 1
+
+************************************************************************************************************
+
+7)Index of all the characters of the alphabet
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+         String s1="abcd";
+		 for(int i=0; i<s1.length; i++)
+		 {
+			 char ch=s1.charAt(i);
+			 System.out.println(i+" "+ch);
+		  }
+	  }
+}
+
+Output-
+0 a
+1 b
+2 c
+3 d
+
+*************************************************************************************************************
+
+8) remove specified character from string
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+         String s1="Aabcd";
+		 char ch='a';
+		 for(int i=0; i<s1.length(); i++)
+		     {
+			    if(s1.charAt(i)!=ch)
+				{
+					System.out.print(s1.charAt(i));
+				}
+		     }
+	  }
+}
+
+Output-
+Abcd
+
+**************************************************************************************************************
+
+9)replace D with F
+
+public class myclass
+{
+      public static void main(String[] args)
+	  {
+         String s1="dddaa";
+		 char ch1='d';
+		 char ch2='f';
+		 String s2="";
+		 for(int i=0; i<s1.length(); i++)
+		    {
+			   if(s1.charAt(i)==ch1)
+			     {
+				   s2=s2+ch2;    
+			     }
+               else
+			    {
+				  s2=s2+s1.charAt(i);   
+			    }				   
+		    }
+			System.out.println(s2);
+	  }
+}
+
+Output-
+  fffaa
+
+*********************************************************************************************************
+
+10)Print all the Duplicate from given String
+
+public class myclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         
+		String s="abcdabcdabcd";
+		String s1="";
+		
+		for(int i=0; i<s.length(); i++)
+		{
+			int cnt=0;
+			for(int j=0; j<i; j++)
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					cnt++;
+				}
+			}
+			if(cnt==0)
+				s1=s1+s.charAt(i);
+				
+		}
+		System.out.println(s1.length());
+		System.out.println(s1);
+	}
+}
+  
+Output-
+4
+abcd
+
+*************************************************************************************************************
+  
+11) Remove Duplicate element from String
+
+public class myclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         
+		String s="abbcfedafbcd";
+		for(int i=0; i<s.length(); i++)
+		{
+			int cnt=0;
+			for(int j=0; j<i; j++)
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					cnt++;
+				}
+			}
+			if(cnt==0)
+			{
+				System.out.print(s.charAt(i));
+			}
+		}
+	}
+}
+  
+Output-
+abcfed
+
+*************************************************************************************************************
+
+12) String is palindrom or not palindrom
+
+public class practise5 {
+
+	public static void main(String[] args) 
+	{
+		
+		String s1="abcd";
+		String s2="";
+		
+		for(int i=s1.length()-1; i>0; i--)
+		{
+           s2=s2+s1.charAt(i);
+		}
+		
+			if(s1.equals(s2))
+			
+				System.out.println("palindrome String");
+			else
+				System.out.println("not palindrome String");
+		}
+}
+
+Output-
+not palindrom string
+
+************************************************************************************************************
+
+13)sort number in a String
+
+public class sorted_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s1="4321";
+		
+		char[] c=s1.toCharArray();
+			for(int i=0; i<c.length; i++)
+			{
+				for(int j=i+1; j<c.length; j++)
+				{
+					if(c[j]<c[i])
+					{
+						char temp=c[i];
+						c[i]=c[j];
+						c[j]=temp;
+					}
+				}
+		    }
+			String s2=new String(c);
+			System.out.println(s2);
+		}
+   }
+
+Output-
+1234
+
+*****************************************************************************************************
+
+14) sorted string along with length
+
+public class sorted_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s1="welcome to hefshine";
+		
+		char[] c=s1.split(" ");
+		
+	       for(int i=0; i<c.length; i++)
+			{
+				for(int j=i+1; j<c.length; j++)
+				{
+					if(c[j].length()<c[i].length())
+					{
+						char temp=c[i];
+						c[i]=c[j];
+						c[j]=temp;
+					}
+				}
+			}
+			 for(int i=0; i<c.length; i++)
+			 {
+				System.out.println(c[i]+" ");
+			 }
+		}
+		
+	}
+
+ Output-
+        to hef welcome
+
+************************************************************************************************************
+
+15) compare a given string to the specified character sequaence
+
+public class sorted_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s1="abcd";
+		String s2="abcd";
+		
+		int cnt=0;
+		if(s1.length()==s2.length())
+		
+			for(int i=0; i<s1.length; i++)
+			{
+				if(s1.charAt(i)!=s2.charAt(i))
+				{
+					cnt++;
+                    System.out.println(false);
+                    break;					
+					}
+					
+				}
+				if(cnt==0)
+				{
+					System.out.println(true);
+				}
+		   }			
+			else
+			{
+				System.out.println(false);
+			}
+		}
+}
+
+Output-
+       false
+
+****************************************************************************************************************
+
+16)lowest Frequency of String character
+
+public class max_frequence {
+
+	public static void main(String[] args)
+	{	
+		String s1="welcome";
+		int min=Integer.MAX_VALUE;
+		char ch=0;	
+		   char[] a=s1.tocharArray();
+			for(int i=0; i<a.length(); i++)
+			{
+	             int count=0;		
+				for(int j=0; j<i; j++)
+				{
+					if(a[i]==a[j])
+					{
+						count++;
+					}
+			    }
+				cnt1=0;	
+				    for(int k=0; k<s1.length(); k++)
+					    {
+						   if(a[i]==a[k])
+						     {
+						       cnt1++;
+						     }
+					     }
+			        if(count==0)
+					 { 
+				        if(cnt1<min)
+				          {
+				    	     min=cnt1;
+				    	     ch=a[i];
+				          }
+		             }
+		       }
+	      }		
+				System.out.println(min);
+				System.out.println(ch);
+				}
+			}
+	   
+Output-
+        1
+		W
+
+**********************************************************************************************************
+
+20)maximum frequaency of string character
+
+public class max_frequence {
+
+	public static void main(String[] args)
+	{	
+		String s1="abcaabcd";
+		int max=Integer.MIN_VALUE;
+		char ch=0;	
+		   char[] a=s1.tocharArray();
+			for(int i=0; i<a.length(); i++)
+			{
+	             int count=0;		
+				for(int j=0; j<i; j++)
+				{
+					if(a[i]==a[j])
+					{
+						count++;
+					}
+			    }
+				cnt1=0;	
+				    for(int k=0; k<s1.length(); k++)
+					    {
+						   if(a[i]==a[k])
+						     {
+						       cnt1++;
+						     }
+					     }
+			        if(count==0)
+					 { 
+				        if(cnt1>max)
+				          {
+				    	     max=cnt1;
+				    	     ch=a[i];
+				          }
+		             }
+		       }
+	      }		
+				System.out.println(max);
+				System.out.println(ch);
+				}
+			}
+	   
+Output-
+        3
+		a	  
+		 
+ **************************************************************************************************************
+21) find largest and smallest word in a string
+
+public class sorted_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s1="welcome to hefshine";
+		
+		char[] c=s1.split(" ");
+		
+	       for(int i=0; i<c.length; i++)
+			{
+				for(int j=i+1; j<c.length; j++)
+				{
+					if(a[i].length()>a[j].length())
+					{
+						String temp=a[i];
+						a[i]=a[j];
+						a[j]=temp;
+					}
+				}
+            }
+            System.out.println("smallest word : "+a[0]);
+            System.out.println("smallest word : "+a[a.length-1]);
+	}
+}
+
+Output-
+      smallest word : to
+      largest word : hefshine
+
+******************************************************************************************************************
+	  
+22)sort array like dictionary
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s1="welcome to hefshine";
+		
+		char[] c=s1.split(" ");
+		
+	       for(int i=0; i<c.length; i++)
+			{
+				for(int j=i+1; j<c.length; j++)
+				{
+					if(compare(c[i],c[j])>0)
+					{
+						char temp=c[i];
+						c[i]=c[j];
+						c[j]=temp;
+					}
+				}
+			}
+		 System.out.println(c[i]+" ");
+		}
+		
+	}
+
+
+	
+
+
